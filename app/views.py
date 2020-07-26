@@ -15,13 +15,14 @@ from flask               import Blueprint, render_template, make_response, jsoni
 from flask_login         import login_user, logout_user, current_user, login_required
 from werkzeug.exceptions import HTTPException, NotFound, abort
 from werkzeug.utils import secure_filename
+from flask_mail import Message
 
 # App modules
 from app        import app, lm, db, bc, r, q
 from app.models.user import User
 from app.models.project import Project
 from app.models.business_logic.test import Analysis
-from app.forms  import LoginForm, RegisterForm
+from app.forms  import LoginForm, RegisterForm , ResetPasswordForm
 from app.common.database import Database
 from app.auth import RegisterAPI, LoginAPI, LogoutAPI, UserAPI
 from app.models.BlacklistToken import BlacklistToken
